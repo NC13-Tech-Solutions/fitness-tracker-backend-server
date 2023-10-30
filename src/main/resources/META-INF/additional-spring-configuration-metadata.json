@@ -18,5 +18,30 @@
     "name": "redis.password",
     "type": "java.lang.String",
     "description": "A description for 'redis.password'"
+  },
+  {
+    "name": "fitness-app-url",
+    "type": "java.lang.String",
+    "description": "A description for 'fitness-app-url'"
+  },
+  {
+    "name": "fitness-app-files",
+    "type": "java.lang.String",
+    "description": "A description for 'fitness-app-files'"
+  },
+  {
+    "name": "jwt-secure-key",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt-secure-key'"
+  },
+  {
+    "name": "jwt-key-issuer",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt-key-issuer'"
+  },
+  {
+    "name": "jwt-key-expiration-time",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt-key-expiration-time'"
   }
 ]}
