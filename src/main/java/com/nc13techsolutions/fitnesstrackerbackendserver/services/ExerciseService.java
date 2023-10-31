@@ -24,15 +24,15 @@ public class ExerciseService {
         return exerciseRepo.getExercises();
     }
 
-    public Exercise getExerciseById(int exId) {
+    public Exercise getExerciseById(Integer exId) {
         return exerciseRepo.getExerciseById(exId);
     }
 
-    public int modifyExercise(int exId, Exercise exercise) {
+    public int modifyExercise(Integer exId, Exercise exercise) {
         return exerciseRepo.updateExercise(exId, exercise);
     }
 
-    public int deleteExercise(int exId) {
+    public int deleteExercise(Integer exId) {
         return exerciseRepo.deleteExercise(exId);
     }
 

@@ -27,7 +27,7 @@ public interface ExerciseRepo {
      * @param exId
      * @return Exercise object or Null if exercise doesn't exist
      */
-    Exercise getExerciseById(int exId);
+    Exercise getExerciseById(Integer exId);
 
     /**
      * Updates the exercise details, if it exists
@@ -37,7 +37,7 @@ public interface ExerciseRepo {
      * @return 1 if update is successful; -1 if exercise is not found; 0 if
      *         exercise.name already exists
      */
-    int updateExercise(int exId, Exercise exercise);
+    int updateExercise(Integer exId, Exercise exercise);
 
     /**
      * Deletes the exercise, if it exists
@@ -46,7 +46,7 @@ public interface ExerciseRepo {
      * @return 1 if delete is successful; -1 if exercise is not found; 0 if exercise
      *         has dependencies
      */
-    int deleteExercise(int exId);
+    int deleteExercise(Integer exId);
 
     /**
      * Checks if exercise already exists
@@ -62,6 +62,6 @@ public interface ExerciseRepo {
      * 
      * @return 0 if there are no exercises; heighest ID value
      */
-    public int findHeighestExId();
+    public Integer findHeighestExId();
 
 }

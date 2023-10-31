@@ -18,6 +18,8 @@ import lombok.Setter;
 public class DayData implements Serializable{
     @NonNull
     @Id
+    private Integer ddId;
+    @NonNull
     private String postedOn;
     @NonNull
     private Integer postedBy;

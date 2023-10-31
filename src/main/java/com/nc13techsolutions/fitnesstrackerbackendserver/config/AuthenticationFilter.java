@@ -102,7 +102,8 @@ public class AuthenticationFilter {
         public SecurityFilterChain noSecurityFilterChain(HttpSecurity http) throws Exception {
                 // TODO: You need to remember to end points here, which will be used without any
                 // authentication
-                String[] zeroSecurityEndpoints = { "/api/user/login", "/api/user/validate", "/files/images/view/**", "/files/videos/view/**" };
+                String[] zeroSecurityEndpoints = { "/api/user/login", "/api/user/validate", "/files/images/view/**",
+                                "/files/videos/view/**" };
                 // This only checks endpoints that are available to all
                 http.securityMatcher(zeroSecurityEndpoints);
                 http.authorizeHttpRequests(
@@ -123,7 +124,8 @@ public class AuthenticationFilter {
         public SecurityFilterChain commonSecurityFilterChain(HttpSecurity http) throws Exception {
                 // TODO: You need to remember to add common end points here, which will be used
                 // by user and admin
-                String[] commonEndpoints = { "/exercise/**", "/files/add", "/files/images/**", "/files/videos/**" };
+                String[] commonEndpoints = { "/exercise/**", "/files/add", "/files/images/**",
+                                "/files/videos/**, /daydata/**, /schedule/**" };
                 // This only checks endpoints that are accessible to both user and admin
                 http.securityMatcher(commonEndpoints);
                 http.authorizeHttpRequests(

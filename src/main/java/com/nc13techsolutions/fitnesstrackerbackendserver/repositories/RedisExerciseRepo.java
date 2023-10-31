@@ -39,13 +39,13 @@ public class RedisExerciseRepo implements ExerciseRepo {
     }
 
     @Override
-    public Exercise getExerciseById(int exId) {
+    public Exercise getExerciseById(Integer exId) {
         HashOperations<String, Integer, Exercise> ho = template.opsForHash();
         return ho.get(EXERCISE_HASH_KEY, exId);
     }
 
     @Override
-    public int updateExercise(int exId, Exercise exercise) {
+    public int updateExercise(Integer exId, Exercise exercise) {
         int result = checkIfExerciseExists(exercise);
         if (result == 0 || result == 2) {
             HashOperations<String, Integer, Exercise> ho = template.opsForHash();
@@ -61,7 +61,7 @@ public class RedisExerciseRepo implements ExerciseRepo {
     }
 
     @Override
-    public int deleteExercise(int exId) {
+    public int deleteExercise(Integer exId) {
         // TODO: Have to check if exId is present in any Days
         int result = checkIfExerciseExists(new Exercise(exId,"",""));
         if (result == 0) {
@@ -93,12 +93,7 @@ public class RedisExerciseRepo implements ExerciseRepo {
 
     }
 
-    /**
-     * Finds the heighest exercise ID
-     * 
-     * @return 0 if there are no exercises; heighest ID value
-     */
-    public int findHeighestExId() {
+    public Integer findHeighestExId() {
         int result = 0;
         HashOperations<String, Integer, Exercise> ho = template.opsForHash();
         Map<Integer, Exercise> m = ho.entries(EXERCISE_HASH_KEY);

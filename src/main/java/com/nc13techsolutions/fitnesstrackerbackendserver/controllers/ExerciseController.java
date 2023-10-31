@@ -39,18 +39,18 @@ public class ExerciseController {
     }
 
     @GetMapping("/{exId}")
-    public Exercise getExerciseById(@PathVariable int exId) {
+    public Exercise getExerciseById(@PathVariable Integer exId) {
         return exerciseService.getExerciseById(exId);
     }
 
     @PutMapping("/{exId}")
-    public int modifyExercise(@PathVariable int exId, @RequestBody Exercise exercise) {
+    public int modifyExercise(@PathVariable Integer exId, @RequestBody Exercise exercise) {
         return exerciseService.modifyExercise(exId, new Exercise(exId, exercise.getName(), exercise.getDescription(),
                 exercise.getMiscDataType(), exercise.getMiscData(), exercise.isDisabled()));
     }
 
     @DeleteMapping("/{exId}")
-    public int deleteExercise(@PathVariable int exId) {
+    public int deleteExercise(@PathVariable Integer exId) {
         return exerciseService.deleteExercise(exId);
     }
 }
