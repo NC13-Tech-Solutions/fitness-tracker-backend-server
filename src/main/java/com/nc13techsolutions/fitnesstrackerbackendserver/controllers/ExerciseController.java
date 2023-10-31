@@ -29,7 +29,8 @@ public class ExerciseController {
     @PostMapping("/new")
     public int addExercise(@RequestBody Exercise exercise) {
         int id = exerciseService.getNewExerciseId() > 0 ? exerciseService.getNewExerciseId() : EXERCISE_ID_START;
-        return exerciseService.addExercise(new Exercise(id, exercise.getName(), exercise.getDescription(),exercise.getMiscDataType(), exercise.getMiscData(), exercise.isDisabled()));
+        return exerciseService.addExercise(new Exercise(id, exercise.getName(), exercise.getDescription(),
+                exercise.getMiscDataType(), exercise.getMiscData(), exercise.isDisabled()));
     }
 
     @GetMapping("/all")
@@ -44,7 +45,8 @@ public class ExerciseController {
 
     @PutMapping("/{exId}")
     public int modifyExercise(@PathVariable int exId, @RequestBody Exercise exercise) {
-        return exerciseService.modifyExercise(exId, new Exercise(exId, exercise.getName(), exercise.getDescription(), exercise.getMiscDataType(), exercise.getMiscData(), exercise.isDisabled()));
+        return exerciseService.modifyExercise(exId, new Exercise(exId, exercise.getName(), exercise.getDescription(),
+                exercise.getMiscDataType(), exercise.getMiscData(), exercise.isDisabled()));
     }
 
     @DeleteMapping("/{exId}")

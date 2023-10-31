@@ -4,14 +4,27 @@ import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class ImportedExercise implements Serializable{
     @NonNull
+    private Integer slNo;
+    @NonNull
     private Integer exId;
-    private String misc;
+    private String weightsUsed;
+    private int dropSet;
+    private String repRange;
+    private int sets;
+    private int restTime;
+    private Integer superSetOf;
+    private String exerciseExplainer;
+    private String[] exerciseFormVideos;
 }

@@ -21,7 +21,7 @@ import lombok.Setter;
 public class Exercise implements Serializable {
     @Id
     @NonNull
-    private int exId;
+    private Integer exId;
     @NonNull
     private String name;
     @NonNull

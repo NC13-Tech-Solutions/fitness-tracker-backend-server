@@ -14,19 +14,19 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash("Days")
-public class Day implements Serializable{
+@RedisHash("DayData")
+public class DayData implements Serializable{
     @NonNull
     @Id
-    private String datePosted;
+    private String postedOn;
     @NonNull
-    private Integer postedUserId;
+    private Integer postedBy;
     @NonNull
-    private String dateModified;
+    private String modifiedOn;
     @NonNull
-    private Integer modifiedUsedId;
+    private Integer modifiedBy;
     @NonNull
-    private Integer weight;
+    private Integer userWeight;
     @NonNull
     private Workout[] workouts;
 }

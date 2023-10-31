@@ -1,4 +1,5 @@
 package com.nc13techsolutions.fitnesstrackerbackendserver.models;
+
 import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
@@ -11,14 +12,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @RequiredArgsConstructor
-public class Workout implements Serializable{
+@NoArgsConstructor
+public class WorkoutSchedule implements Serializable{
     @NonNull
-    private String time;
+    private Integer scheduleId;
+    private String[] scheduledDaysOfTheWeek;
+    @NonNull
+    private Integer priority;
     @NonNull
     private ImportedExercise[] exercises;
-    private String text;
-    private String[] photos;
-    private String[] videos;
 }
