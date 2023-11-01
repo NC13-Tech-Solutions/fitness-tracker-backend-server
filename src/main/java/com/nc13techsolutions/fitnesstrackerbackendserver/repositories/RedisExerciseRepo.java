@@ -80,11 +80,11 @@ public class RedisExerciseRepo implements ExerciseRepo {
 
         for (Map.Entry<Integer, Exercise> me : m.entrySet()) {
             if (me.getValue().getName().trim().equalsIgnoreCase(exercise.getName().trim())) {
-                if (me.getValue().getExId() == exercise.getExId()) {
+                if (me.getValue().getExId().compareTo(exercise.getExId()) == 0) {
                     return 2;
                 }
                 return 1;
-            } else if (me.getValue().getExId() == exercise.getExId()) {
+            } else if (me.getValue().getExId().compareTo(exercise.getExId()) == 0) {
                 result = 0;
             }
         }
@@ -98,8 +98,8 @@ public class RedisExerciseRepo implements ExerciseRepo {
         HashOperations<String, Integer, Exercise> ho = template.opsForHash();
         Map<Integer, Exercise> m = ho.entries(EXERCISE_HASH_KEY);
         for (Map.Entry<Integer, Exercise> me : m.entrySet()) {
-            if (me.getValue().getExId() >= result) {
-                result = me.getValue().getExId() + 1;
+            if (me.getValue().getExId().intValue() >= result) {
+                result = me.getValue().getExId().intValue() + 1;
             }
         }
         return result;

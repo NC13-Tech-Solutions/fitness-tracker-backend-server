@@ -84,11 +84,11 @@ public class RedisDayDataRepo implements DayDataRepo {
 
         for (Map.Entry<Integer, DayData> mdd : m.entrySet()) {
             if (mdd.getValue().getPostedOn().trim().equalsIgnoreCase(data.getPostedOn().trim())) {
-                if (mdd.getValue().getDdId() == data.getDdId()) {
+                if (mdd.getValue().getDdId().compareTo(data.getDdId()) == 0) {
                     return 2;
                 }
                 return 1;
-            } else if (mdd.getValue().getDdId() == data.getDdId()) {
+            } else if (mdd.getValue().getDdId().compareTo(data.getDdId()) == 0) {
                 result = 0;
             }
         }
@@ -102,8 +102,8 @@ public class RedisDayDataRepo implements DayDataRepo {
         HashOperations<String, Integer, DayData> ho = template.opsForHash();
         Map<Integer, DayData> m = ho.entries(DAYDATA_HASH_KEY);
         for (Map.Entry<Integer, DayData> mdd : m.entrySet()) {
-            if (mdd.getValue().getDdId() >= result) {
-                result = mdd.getValue().getDdId() + 1;
+            if (mdd.getValue().getDdId().intValue() >= result) {
+                result = mdd.getValue().getDdId().intValue() + 1;
             }
         }
         return result;
