@@ -100,8 +100,7 @@ public class AuthenticationFilter {
         @Bean
         @Order(1)
         public SecurityFilterChain noSecurityFilterChain(HttpSecurity http) throws Exception {
-                // TODO: You need to remember to end points here, which will be used without any
-                // authentication
+                // TODO: End points here will be used without any authentication
                 String[] zeroSecurityEndpoints = { "/api/user/login", "/api/user/validate", "/files/images/view/**",
                                 "/files/videos/view/**" };
                 // This only checks endpoints that are available to all
@@ -119,11 +118,12 @@ public class AuthenticationFilter {
                 return http.build();
         }
 
+        // TODO: Need to improve security for images and videos
+
         @Bean
         @Order(2)
         public SecurityFilterChain commonSecurityFilterChain(HttpSecurity http) throws Exception {
-                // TODO: You need to remember to add common end points here, which will be used
-                // by user and admin
+                // TODO: Remember to add end points that'll used by both user and admin here
                 String[] commonEndpoints = { "/exercise/**", "/files/add", "/files/images/**",
                                 "/files/videos/**, /daydata/**, /schedule/**" };
                 // This only checks endpoints that are accessible to both user and admin
@@ -150,7 +150,7 @@ public class AuthenticationFilter {
         @Bean
         @Order(3)
         public SecurityFilterChain adminSecurityFilterChain(HttpSecurity http) throws Exception {
-                // TODO: You need to remember to add admin end points here
+                // TODO: Remember to add end points used only by admin here
                 String[] adminEndpoints = { "/api/user/**" };
                 // This only checks endpoints that are accessible admin
                 http.securityMatcher(adminEndpoints);

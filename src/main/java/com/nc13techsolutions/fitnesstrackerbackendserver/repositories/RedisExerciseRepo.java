@@ -62,8 +62,13 @@ public class RedisExerciseRepo implements ExerciseRepo {
 
     @Override
     public int deleteExercise(Integer exId) {
-        // TODO: Have to check if exId is present in any Days
-        int result = checkIfExerciseExists(new Exercise(exId,"",""));
+        /*
+         * TODO: This is only for testing. On production version, either there will not
+         * be any option to delete exercises, as we already have an option to disable
+         * them, or we'll have to check if exId is present anywhere else and remove
+         * those entries as well
+         */
+        int result = checkIfExerciseExists(new Exercise(exId, "", ""));
         if (result == 0) {
             HashOperations<String, Integer, Exercise> ho = template.opsForHash();
             ho.delete(EXERCISE_HASH_KEY, exId);

@@ -35,7 +35,7 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    // TODO: Need to do other user mappings
+    // FIXME: Need to do other user mappings
     @PostMapping("/login")
     public String checkUser(@RequestBody JustUserCredentials user){
         if(userService.checkUserCredentials(user.getUSERNAME(), user.getPASSWORD()) != null){

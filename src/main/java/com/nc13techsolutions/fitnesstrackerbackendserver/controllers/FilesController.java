@@ -44,7 +44,7 @@ public class FilesController {
                 .notFound()
                 .build();
     }
-
+// FIXME: Need to improve security for images and videos
     @GetMapping("/images/view/{fileName}")
     public ResponseEntity<Resource> getImageFile(@PathVariable String fileName) {
         Path resultPath = filesService.getFile(new FileData(fileName, "images"));

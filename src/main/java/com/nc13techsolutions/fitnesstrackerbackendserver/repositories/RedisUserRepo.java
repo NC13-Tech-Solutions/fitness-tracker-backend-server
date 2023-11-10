@@ -78,7 +78,11 @@ public class RedisUserRepo implements UserRepo {
 
     @Override
     public int deleteUser(int userId) {
-        // TODO: Have to check if userId is present in Days
+        /*
+         * TODO: This is only for testing. In production, if this option is indeed
+         * available, then we have to check if userId is present somewhere else and
+         * change those as well
+         */
         int result = checkIfUserExists(new User(userId, "", "", USER, "", ""));
         if (result == 0) {
             HashOperations<String, Integer, User> ho = template.opsForHash();
