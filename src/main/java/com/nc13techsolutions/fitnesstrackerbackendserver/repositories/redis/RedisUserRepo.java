@@ -1,4 +1,4 @@
-package com.nc13techsolutions.fitnesstrackerbackendserver.repositories;
+package com.nc13techsolutions.fitnesstrackerbackendserver.repositories.redis;
 
 import java.util.List;
 import java.util.Map;
@@ -10,6 +10,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.nc13techsolutions.fitnesstrackerbackendserver.models.User;
+import com.nc13techsolutions.fitnesstrackerbackendserver.repositories.UserRepo;
 
 @Repository("redis user")
 @EnableAutoConfiguration
