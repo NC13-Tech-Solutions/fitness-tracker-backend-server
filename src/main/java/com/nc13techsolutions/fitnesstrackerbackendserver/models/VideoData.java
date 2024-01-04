@@ -4,21 +4,16 @@ import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.NonNull;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
-public class Workout implements Serializable{
+public class VideoData implements Serializable{
     @NonNull
-    private String time;
+    private String data;
     @NonNull
-    private ImportedExercise[] exercises;
-    private String text;
-    private String[] photos;
-    private VideoData[] videos;
+    private VideoDataType type;
 }

@@ -19,12 +19,12 @@ public class ImportedExercise implements Serializable{
     private Integer slNo;
     @NonNull
     private Integer exId;
-    private String weightsUsed;
-    private int dropSet;
+    private int[] weightsUsed;
+    private int dropSets;
     private String repRange;
     private int sets;
     private int restTime;
     private Integer superSetOf;
     private String exerciseExplainer;
-    private String[] exerciseFormVideos;
+    private VideoData[] exerciseFormVideos;
 }
